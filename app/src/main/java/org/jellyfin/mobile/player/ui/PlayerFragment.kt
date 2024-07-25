@@ -278,6 +278,8 @@ class PlayerFragment : Fragment(), BackPressInterceptor {
 
     fun onFastForward() = viewModel.fastForward()
 
+    fun seekToOffset(ms: Long) = viewModel.seekToOffset(ms)
+
     /**
      * @param callback called if track selection was successful and UI needs to be updated
      */
@@ -378,7 +380,7 @@ class PlayerFragment : Fragment(), BackPressInterceptor {
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
         Handler(Looper.getMainLooper()).post {
-            updateFullscreenState(newConfig)
+//            updateFullscreenState(newConfig)
             playerGestureHelper.handleConfiguration(newConfig)
         }
     }

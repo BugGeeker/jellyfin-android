@@ -405,6 +405,10 @@ class PlayerViewModel(application: Application) : AndroidViewModel(application),
         playerOrNull?.seekToOffset(displayPreferences.skipForwardLength)
     }
 
+    fun seekToOffset(ms: Long) {
+        playerOrNull?.seekToOffset(ms)
+    }
+
     fun skipToPrevious() {
         val player = playerOrNull ?: return
         when {
